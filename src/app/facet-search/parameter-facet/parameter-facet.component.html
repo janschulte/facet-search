@@ -1,0 +1,3 @@
+<div *ngFor="let param of parameterList" [ngStyle]="{'font-weight': param.selected ? 'bold' : 'normal'}" (click)="toggleFacet(param)">
+  {{param.label}} ({{param.count}})
+</div>
