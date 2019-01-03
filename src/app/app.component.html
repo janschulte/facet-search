@@ -1,16 +1,29 @@
-<div>Categories:</div>
-<app-parameter-facet [facetSearchService]="facetSearch" [type]="categoryType"></app-parameter-facet>
-<br>
-<div>Procedures:</div>
-<app-parameter-facet [facetSearchService]="facetSearch" [type]="procedureType"></app-parameter-facet>
-<br>
-<div>Features:</div>
-<app-parameter-facet [facetSearchService]="facetSearch" [type]="featureType"></app-parameter-facet>
-<br>
-<div>Phenomena:</div>
-<app-parameter-facet [facetSearchService]="facetSearch" [type]="phenomenonType"></app-parameter-facet>
-<br>
-<div>Offerings:</div>
-<app-parameter-facet [facetSearchService]="facetSearch" [type]="offeringType"></app-parameter-facet>
-
-<app-result-list [facetSearchService]="facetSearch"></app-result-list>
+<div class="container-fluid content">
+  <div class="row">
+    <div class="facets col">
+      <div class="facet">
+        <h2>Category</h2>
+        <app-parameter-facet [facetSearchService]="facetSearch" [type]="categoryType"></app-parameter-facet>
+      </div>
+      <div class="facet">
+        <h2>Procedure</h2>
+        <app-parameter-facet [facetSearchService]="facetSearch" [type]="procedureType"></app-parameter-facet>
+      </div>
+      <div class="facet">
+        <h2>Feature</h2>
+        <app-parameter-facet [facetSearchService]="facetSearch" [type]="featureType"></app-parameter-facet>
+      </div>
+      <div class="facet">
+        <h2>Phenomenon</h2>
+        <app-parameter-facet [facetSearchService]="facetSearch" [type]="phenomenonType"></app-parameter-facet>
+      </div>
+      <div class="facet">
+        <h2>Offering</h2>
+        <app-parameter-facet [facetSearchService]="facetSearch" [type]="offeringType"></app-parameter-facet>
+      </div>
+    </div>
+    <div class="col results">
+      <app-result-list [facetSearchService]="facetSearch"></app-result-list>
+    </div>
+  </div>
+</div>

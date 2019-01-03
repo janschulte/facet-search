@@ -1,0 +1,36 @@
+.content,
+.row {
+  height: 100%;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.results {
+  overflow: auto;
+}
+
+.facets {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-width: 400px;
+
+  .facet {
+    height: 20%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid blue;
+    margin: 5px;
+    padding: 5px;
+
+    h2 {
+      border-bottom: 2px solid blue;
+    }
+
+    app-parameter-facet {
+      flex: 1;
+      overflow: auto;
+    }
+  }
+}
