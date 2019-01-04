@@ -8,8 +8,7 @@ import { FacetParameter, FacetSearch, ParameterFacetSort, ParameterFacetType } f
 })
 export class FacetSearchService implements FacetSearch {
 
-  public onFacetChanged;
-  public onTimeseriesSet;
+  public onResultsChanged: EventEmitter<Timeseries[]>;
 
   private facets: Map<ParameterFacetType, FacetParameter> = new Map();
 
@@ -18,14 +17,12 @@ export class FacetSearchService implements FacetSearch {
   private filteredTimeseries: Timeseries[];
 
   constructor() {
-    this.onFacetChanged = new EventEmitter();
-    this.onTimeseriesSet = new EventEmitter();
+    this.onResultsChanged = new EventEmitter();
   }
 
   public setTimeseries(ts: Timeseries[]) {
     this.timeseries = ts;
     this.setFilteredTimeseries();
-    this.onTimeseriesSet.emit();
   }
 
   public getParameterList(type: ParameterFacetType, sort: ParameterFacetSort): FacetParameter[] {
@@ -57,7 +54,6 @@ export class FacetSearchService implements FacetSearch {
       this.facets.delete(type);
     }
     this.setFilteredTimeseries();
-    this.onFacetChanged.emit();
   }
 
   public getFilteredResults(): Timeseries[] {
@@ -77,6 +73,7 @@ export class FacetSearchService implements FacetSearch {
     } else {
       this.filteredTimeseries = this.timeseries;
     }
+    this.onResultsChanged.emit(this.filteredTimeseries);
   }
 
   private checkFacet(type: ParameterFacetType, parameter: string): boolean {

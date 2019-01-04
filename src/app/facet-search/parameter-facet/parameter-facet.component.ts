@@ -29,8 +29,7 @@ export class ParameterFacetComponent implements OnInit {
     if (!this.type) {
       console.error('ParameterFacetComponent needs a type');
     }
-    this.facetSearchService.onTimeseriesSet.subscribe(() => this.fetchFacetParameter());
-    this.facetSearchService.onFacetChanged.subscribe(() => this.fetchFacetParameter());
+    this.facetSearchService.onResultsChanged.subscribe(() => this.fetchFacetParameter());
   }
 
   public toggleFacet(parameter: FacetParameter) {

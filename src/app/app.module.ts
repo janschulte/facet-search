@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { DatasetApiInterface, DatasetImplApiInterface, HelgolandCoreModule } from '@helgoland/core';
+import { HelgolandMapModule } from '@helgoland/map';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
@@ -26,7 +27,8 @@ import { ResultMapComponent } from './facet-search/result-map/result-map.compone
         deps: [HttpClient]
       }
     }),
-    HelgolandCoreModule
+    HelgolandCoreModule,
+    HelgolandMapModule
   ],
   providers: [
     { useClass: DatasetImplApiInterface, provide: DatasetApiInterface }

@@ -2,8 +2,7 @@ import { EventEmitter } from '@angular/core';
 import { Timeseries } from '@helgoland/core';
 
 export interface FacetSearch {
-    onFacetChanged: EventEmitter<void>;
-    onTimeseriesSet: EventEmitter<void>;
+    onResultsChanged: EventEmitter<Timeseries[]>;
     getParameterList(type: ParameterFacetType, sort: ParameterFacetSort): FacetParameter[];
     selectParameter(type: ParameterFacetType, parameter: FacetParameter): any;
     setTimeseries(timeseries: Timeseries[]);

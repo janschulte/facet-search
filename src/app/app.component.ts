@@ -19,12 +19,25 @@ export class AppComponent {
   public phenomenonType: ParameterFacetType = ParameterFacetType.phenomenon;
   public procedureType: ParameterFacetType = ParameterFacetType.procedure;
 
+  public resultCount: number;
+  public showMap = true;
+
   constructor(
     private api: DatasetApiInterface,
     public facetSearch: FacetSearchService
   ) {
     const url = 'http://fluggs.wupperverband.de/sos2/api/v1/';
     this.api.getTimeseries(url, { expanded: true }).subscribe(res => this.facetSearch.setTimeseries(res));
+
+    this.facetSearch.onResultsChanged.subscribe(ts => this.resultCount = ts.length);
+  }
+
+  public onSelectedTs(ts: Timeseries) {
+    alert(`Clicked: ${ts.label}`);
+  }
+
+  public toggleResultView() {
+    this.showMap = !this.showMap;
   }
 
 }

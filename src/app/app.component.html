@@ -22,8 +22,20 @@
         <app-parameter-facet [facetSearchService]="facetSearch" [type]="offeringType"></app-parameter-facet>
       </div>
     </div>
-    <div class="col results">
-      <app-result-list [facetSearchService]="facetSearch"></app-result-list>
+    <div class="results col">
+      <div class="toggle-bar">
+        <span>
+          {{resultCount}} Datasets found
+        </span>
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-" [ngClass]="{'btn-primary': !showMap, 'btn-outline-primary': showMap}" (click)="toggleResultView()">List</button>
+          <button type="button" class="btn" [ngClass]="{'btn-primary': showMap, 'btn-outline-primary': !showMap}" (click)="toggleResultView()">Map</button>
+        </div>
+      </div>
+      <div class="result-content">
+        <app-result-list *ngIf="!showMap" [facetSearchService]="facetSearch"></app-result-list>
+        <app-result-map *ngIf="showMap" [facetSearchService]="facetSearch" [cluster]="true" (selected)="onSelectedTs($event)"></app-result-map>
+      </div>
     </div>
   </div>
 </div>

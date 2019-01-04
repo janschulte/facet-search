@@ -21,11 +21,7 @@ export class ResultListComponent implements OnInit {
     if (!this.facetSearchService) {
       console.error('ResultListComponent needs a facet search service');
     }
-    this.facetSearchService.onTimeseriesSet.subscribe(() => this.fetchResults());
-    this.facetSearchService.onFacetChanged.subscribe(() => this.fetchResults());
-  }
-
-  private fetchResults(): any {
+    this.facetSearchService.onResultsChanged.subscribe(ts => this.results = ts);
     this.results = this.facetSearchService.getFilteredResults();
   }
 

@@ -7,6 +7,18 @@
 
 .results {
   overflow: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .toggle-bar {
+    padding: 5px;
+    text-align: center;
+  }
+
+  .result-content {
+    flex: 1;
+  }
 }
 
 .facets {
@@ -16,7 +28,7 @@
   max-width: 400px;
 
   .facet {
-    height: 20%;
+    flex: 1;
     overflow: hidden;
     display: flex;
     flex-direction: column;
