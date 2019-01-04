@@ -1,0 +1,27 @@
+<form class="form-inline">
+  <div class="form-group">
+    <span>From: </span>
+    <div class="input-group">
+      <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="from" (ngModelChange)="onChange()"
+        ngbDatepicker #fromDp="ngbDatepicker" container="body" placement="top-left">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary calendar" (click)="fromDp.toggle()" type="button"></button>
+        <button class="btn btn-outline-secondary" (click)="selectFromToday()" type="button">T</button>
+      </div>
+    </div>
+  </div>
+</form>
+<form class="form-inline">
+  <div class="form-group">
+    <span>To: </span>
+    <div class="input-group">
+      <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="to" (ngModelChange)="onChange()"
+        ngbDatepicker #toDp="ngbDatepicker" container="body" placement="top-left">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary calendar" (click)="toDp.toggle()" type="button"></button>
+        <button class="btn btn-outline-secondary" (click)="selectToToday()" type="button">T</button>
+      </div>
+    </div>
+  </div>
+</form>
+<button type="button" class="btn btn-light" *ngIf="selectedTimespan" (click)="clearTimespan()">Reset Timespan</button>

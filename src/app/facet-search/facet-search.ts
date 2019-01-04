@@ -1,5 +1,5 @@
 import { EventEmitter } from '@angular/core';
-import { Timeseries } from '@helgoland/core';
+import { Timeseries, Timespan } from '@helgoland/core';
 
 export interface FacetSearch {
     onResultsChanged: EventEmitter<Timeseries[]>;
@@ -7,6 +7,8 @@ export interface FacetSearch {
     selectParameter(type: ParameterFacetType, parameter: FacetParameter): any;
     setTimeseries(timeseries: Timeseries[]);
     getFilteredResults(): Timeseries[];
+    setTimespan(timespan: Timespan);
+    getTimespan(): Timespan;
 }
 
 export enum ParameterFacetType {

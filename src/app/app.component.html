@@ -21,6 +21,10 @@
         <h2>Offering</h2>
         <app-parameter-facet [facetSearchService]="facetSearch" [type]="offeringType"></app-parameter-facet>
       </div>
+      <div class="facet">
+        <h2>Timeframe</h2>
+        <app-time-facet [facetSearchService]="facetSearch"></app-time-facet>
+      </div>
     </div>
     <div class="results col">
       <div class="toggle-bar">
@@ -28,8 +32,10 @@
           {{resultCount}} Datasets found
         </span>
         <div class="btn-group" role="group" aria-label="Basic example">
-          <button type="button" class="btn btn-" [ngClass]="{'btn-primary': !showMap, 'btn-outline-primary': showMap}" (click)="toggleResultView()">List</button>
-          <button type="button" class="btn" [ngClass]="{'btn-primary': showMap, 'btn-outline-primary': !showMap}" (click)="toggleResultView()">Map</button>
+          <button type="button" class="btn btn-" [ngClass]="{'btn-primary': !showMap, 'btn-outline-primary': showMap}"
+            (click)="toggleResultView()">List</button>
+          <button type="button" class="btn" [ngClass]="{'btn-primary': showMap, 'btn-outline-primary': !showMap}"
+            (click)="toggleResultView()">Map</button>
         </div>
       </div>
       <div class="result-content">
