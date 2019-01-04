@@ -33,7 +33,7 @@
         </div>
       </div>
       <div class="result-content">
-        <app-result-list *ngIf="!showMap" [facetSearchService]="facetSearch"></app-result-list>
+        <app-result-list *ngIf="!showMap" [facetSearchService]="facetSearch" (selected)="onSelectedTs($event)"></app-result-list>
         <app-result-map *ngIf="showMap" [facetSearchService]="facetSearch" [cluster]="true" (selected)="onSelectedTs($event)"></app-result-map>
       </div>
     </div>
