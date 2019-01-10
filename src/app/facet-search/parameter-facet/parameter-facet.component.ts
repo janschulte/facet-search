@@ -18,6 +18,9 @@ export class ParameterFacetComponent implements OnInit {
   @Input()
   public sort: ParameterFacetSort = ParameterFacetSort.descCount;
 
+  @Input()
+  public textualFilter: string;
+
   public parameterList: FacetParameter[];
 
   constructor() { }

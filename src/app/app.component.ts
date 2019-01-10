@@ -20,6 +20,12 @@ export class AppComponent {
   public phenomenonType: ParameterFacetType = ParameterFacetType.phenomenon;
   public procedureType: ParameterFacetType = ParameterFacetType.procedure;
 
+  public categoryAutocomplete: string;
+  public featureAutocomplete: string;
+  public offeringAutocomplete: string;
+  public phenomenonAutocomplete: string;
+  public procedureAutocomplete: string;
+
   public resultCount: number;
   public showMap = true;
 

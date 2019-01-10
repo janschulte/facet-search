@@ -37,8 +37,16 @@
     margin: 5px;
     padding: 5px;
 
-    h2 {
+    .facet-header{
+      display: flex;
+      flex-direction: row;
       border-bottom: 2px solid blue;
+      .facet-header-label {
+        font-size: 150%;
+      }
+      .autocomplete {
+        margin-left: auto;
+      }
     }
 
     app-parameter-facet {

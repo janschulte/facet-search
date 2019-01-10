@@ -2,27 +2,54 @@
   <div class="row">
     <div class="facets col">
       <div class="facet">
-        <h2>Category</h2>
-        <app-parameter-facet [facetSearchService]="facetSearch" [type]="categoryType"></app-parameter-facet>
+        <div class="facet-header">
+          <div class="facet-header-label">Category</div>
+          <div class="autocomplete mb-1">
+            <input type="text" class="form-control" placeholder="Autocomplete" (input)="categoryAutocomplete = $event.target.value">
+          </div>
+        </div>
+        <app-parameter-facet [facetSearchService]="facetSearch" [type]="categoryType" [textualFilter]="categoryAutocomplete"></app-parameter-facet>
       </div>
       <div class="facet">
-        <h2>Procedure</h2>
-        <app-parameter-facet [facetSearchService]="facetSearch" [type]="procedureType"></app-parameter-facet>
+        <div class="facet-header">
+          <div class="facet-header-label">Procedure</div>
+          <div class="autocomplete">
+            <input type="text" class="form-control" placeholder="Autocomplete" (input)="procedureAutocomplete = $event.target.value">
+          </div>
+        </div>
+        <app-parameter-facet [facetSearchService]="facetSearch" [type]="procedureType" [textualFilter]="procedureAutocomplete"></app-parameter-facet>
       </div>
       <div class="facet">
-        <h2>Feature</h2>
-        <app-parameter-facet [facetSearchService]="facetSearch" [type]="featureType"></app-parameter-facet>
+        <div class="facet-header">
+          <div class="facet-header-label">Feature</div>
+          <div class="autocomplete">
+            <input type="text" class="form-control" placeholder="Autocomplete" (input)="featureAutocomplete = $event.target.value">
+          </div>
+        </div>
+        <app-parameter-facet [facetSearchService]="facetSearch" [type]="featureType" [textualFilter]="featureAutocomplete" [sort]="'ascAlphabet'"></app-parameter-facet>
       </div>
       <div class="facet">
-        <h2>Phenomenon</h2>
-        <app-parameter-facet [facetSearchService]="facetSearch" [type]="phenomenonType"></app-parameter-facet>
+        <div class="facet-header">
+          <div class="facet-header-label">Phenomenon</div>
+          <div class="autocomplete">
+            <input type="text" class="form-control" placeholder="Autocomplete" (input)="phenomenonAutocomplete = $event.target.value">
+          </div>
+        </div>
+        <app-parameter-facet [facetSearchService]="facetSearch" [type]="phenomenonType" [textualFilter]="phenomenonAutocomplete"></app-parameter-facet>
       </div>
       <div class="facet">
-        <h2>Offering</h2>
-        <app-parameter-facet [facetSearchService]="facetSearch" [type]="offeringType"></app-parameter-facet>
+        <div class="facet-header">
+          <div class="facet-header-label">Offering</div>
+          <div class="autocomplete">
+            <input type="text" class="form-control" placeholder="Autocomplete" (input)="offeringAutocomplete = $event.target.value">
+          </div>
+        </div>
+        <app-parameter-facet [facetSearchService]="facetSearch" [type]="offeringType" [textualFilter]="offeringAutocomplete"></app-parameter-facet>
       </div>
       <div class="facet">
-        <h2>Timeframe</h2>
+        <div class="facet-header">
+          <div class="facet-header-label">Timeframe</div>
+        </div>
         <app-time-facet [facetSearchService]="facetSearch"></app-time-facet>
       </div>
     </div>

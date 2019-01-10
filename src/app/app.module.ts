@@ -13,6 +13,7 @@ import { ParameterFacetComponent } from './facet-search/parameter-facet/paramete
 import { ResultListComponent } from './facet-search/result-list/result-list.component';
 import { ResultMapComponent } from './facet-search/result-map/result-map.component';
 import { TimeFacetComponent } from './facet-search/time-facet/time-facet.component';
+import { MatchFacetParameterLabelPipe } from './match-facet-parameter-label.pipe';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { TimeFacetComponent } from './facet-search/time-facet/time-facet.compone
     ResultListComponent,
     ResultMapComponent,
     TimeFacetComponent,
+    MatchFacetParameterLabelPipe,
   ],
   imports: [
     BrowserModule,
