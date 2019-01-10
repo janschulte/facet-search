@@ -35,7 +35,7 @@ export class AppComponent {
   ) {
 
     forkJoin([
-      this.api.getTimeseries('http://fluggs.wupperverband.de/sos2/api/v1/', { expanded: true }),
+      this.api.getTimeseries('https://fluggs.wupperverband.de/sos2/api/v1/', { expanded: true }),
       // this.api.getTimeseries('http://sensorweb.demo.52north.org/sensorwebtestbed/api/v1/', { expanded: true }),
       // this.api.getTimeseries('http://sensorweb.demo.52north.org/sensorwebclient-webapp-stable/api/v1/', { expanded: true }),
       // this.api.getTimeseries('http://geo.irceline.be/sos/api/v1/', { expanded: true }),
