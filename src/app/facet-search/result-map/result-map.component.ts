@@ -8,9 +8,9 @@ import { FacetSearch } from '../facet-search';
 
 delete L.Icon.Default.prototype['_getIconUrl'];
 L.Icon.Default.mergeOptions({
-  iconRetinaUrl: '/assets/images/leaflet/marker-icon-2x.png',
-  iconUrl: '/assets/images/leaflet/marker-icon.png',
-  shadowUrl: '/assets/images/leaflet/marker-shadow.png',
+  iconRetinaUrl: './assets/images/leaflet/marker-icon-2x.png',
+  iconUrl: './assets/images/leaflet/marker-icon.png',
+  shadowUrl: './assets/images/leaflet/marker-shadow.png',
 });
 
 @Component({
